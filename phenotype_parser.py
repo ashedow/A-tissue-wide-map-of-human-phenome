@@ -7,7 +7,6 @@ from scipy.stats import kstest
 
 
 def file_parsing(data):
-	"""Парсит файл с фенотипом. Разделяет столбец Variant на location и Chr"""
     control_df = pd.read_csv(phenotype, sep='\t')
     location = list(map(lambda x: int(x.split(':')[1]), control_df['variant']))
     Chr = list(map(lambda x: x.split(':')[0], control_df['variant']))
