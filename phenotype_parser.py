@@ -81,9 +81,9 @@ for filename in os.listdir(os.getcwd()):
 					table_result[name] = [kstest(gene_p, "uniform", N=len(gene_p))[0], kstest(
 								gene_p, "uniform", N=len(gene_p))[1], min(gene_p)]
 					gene_p = list()
+	
+# Dict to Dataframe and csv 
+		result = pd.DataFrame.from_dict(table_result, orient='index', columns=['KS_coef', 'p-value', 'min_p_value'])
+		result.to_csv('{}.tsv'.format(phe_name), sep='\t', header=True, index=True, encoding='utf_8_sig')
 	else:
 		continue
-
-# Dict to Dataframe and csv 
-result = pd.DataFrame.from_dict(table_result, orient='index', columns=['KS_coef', 'p-value', 'min_p_value'])
-result.to_csv('{}.tsv'.format(phe_name), sep='\t', header=True, index=True, encoding='utf_8_sig')
