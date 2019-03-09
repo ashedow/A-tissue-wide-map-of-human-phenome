@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-inlinesvg": "^0.8.4",
+    "react-toggle-display": "^2.2.0"
+  }
+}

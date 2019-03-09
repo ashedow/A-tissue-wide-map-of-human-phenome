@@ -1,1 +1,0 @@
-export {default as Liver} from './liver.svg';
