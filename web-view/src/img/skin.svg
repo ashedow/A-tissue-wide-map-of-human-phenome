@@ -18,7 +18,7 @@
    inkscape:version="0.92.4 5da689c313, 2019-01-14"><metadata
    id="metadata3762"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><sodipodi:namedview
    pagecolor="#ffffff"
    bordercolor="#666666"
    borderopacity="1"
@@ -32,12 +32,12 @@
    id="namedview3760"
    showgrid="false"
    inkscape:zoom="2.8026235"
-   inkscape:cx="373.68238"
+   inkscape:cx="311.59769"
    inkscape:cy="531.14252"
    inkscape:window-x="0"
    inkscape:window-y="18"
    inkscape:window-maximized="0"
-   inkscape:current-layer="svg3758" />
+   inkscape:current-layer="45" />
  <defs
    id="defs3750">
   <style
@@ -53,7 +53,8 @@
  <g
    id="Слой_x0020_1"
    transform="translate(-1118.7115,-765.47129)"
-   style="stroke-width:132.2916634;stroke-miterlimit:4;stroke-dasharray:none;stroke:#ffe680">
+   style="stroke-width:132.2916634;stroke-miterlimit:4;stroke-dasharray:none;stroke:#ffe680"
+   inkscape:label="skin">
   <metadata
    id="CorelCorpID_0Corel-Layer" />
   <path

@@ -1,34 +1,34 @@
-import React from 'react';
-import { connect } from 'unistore/react';
-import Actions from '../store/actions';
+import React, {Component} from 'react';
+import { inject } from 'alfa';
 
-
-class Button extends React.Component {
+class Button extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			activeButton: false,
-			meaning: {},
-			showMessage: true,
+			meaning: {}
 		}
-		this.handleClick = this.handleClick.bind(this);
+		this.handleClick = this.handleClick.bind(this)
 	  }
 
-	handleClick(index, row) {
-		this.setState({activeButton: !this.state.activeButton}) 
-		// meaning = this.state.data
-		var items = Object.keys(row).slice(1).map((key) => {
-			return [key, row[key]];
-		});
-		items.sort(function(first, second) {
-			return second[1] - first[1];
-		});
-		// let meaning = {'id': index, 'meaning': items}
-		let meaning = {'meaning': items}
-		this.props.addTeasureMean(index);
-		this.setState(state => {
-			const meaning = [...state.meaning];
-		})
+	handleClick = (index, row) => {
+		if (this.state.activeButton){
+			this.setState({
+				meaning: {},
+				activeButton: this.state.activeButton=false
+			}, () => this.props.deleteTissue({'id': index}))
+		} else {
+			var items = Object.keys(row).slice(1).map((key) => {
+				return [key, row[key]];
+			});
+			items.sort(function(first, second) {
+				return second[1] - first[1];
+			});
+			this.setState({
+				meaning: {'id': index, 'meaning': items[0]},
+				activeButton: this.state.activeButton=true
+			},() => this.props.addTissue({'id': index, 'meaning':items[0]}))
+		}
 	}
 
 	render() {
@@ -51,8 +51,6 @@ class Button extends React.Component {
 		}
 		const {activeButton, meaning} = this.state;
 		const {row, value, index} = this.props;
-		// console.log(this.props.row)
-
 		return (
 			<div>
 				<input
@@ -61,14 +59,14 @@ class Button extends React.Component {
 					value={value} 
 					index={index}
 					onClick={() => this.handleClick(index, row)}
-					disabled={!this.state.meaning}
 				/>
 			</div>
 		);
 	}
 }
 
-export default connect(
-	state => state,
-	Actions
-  )(Button);
+export default inject(
+	Button,
+	['addTissue', 'deleteTissue'],
+	['tissuelist']
+  )

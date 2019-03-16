@@ -3,7 +3,7 @@ import {Liver, Kidney, Skin, SunSkin, Stomach, Prostate} from '../img/human';
 import ReactSVG from 'react-svg'
 
 
-class Tissue extends React.Component {
+class TmpTissue extends React.Component {
 	constructor(props) {
 		super(props);
 	  }
@@ -16,17 +16,14 @@ class Tissue extends React.Component {
 			height: "100vh",
 			wight: 'auto',
 			margin: "auto",
-			content:{content},
 		};
-		const {src, index, content} = this.props;
+		const {src, index} = this.props;
 		return (
 			<ReactSVG src={Prostate}
 				index={index}
-				svgStyle={style} 
-				content={content}
-			/>
+				svgStyle={style} />
 		);
 	}
 }
 
-export default Tissue;
+export default TmpTissue;

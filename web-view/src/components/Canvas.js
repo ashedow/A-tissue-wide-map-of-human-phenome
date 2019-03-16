@@ -4,11 +4,10 @@ import ReactSVG from 'react-svg'
 
 const Canvas = () => {
   const style = {
+      position: 'absolute',
       objectFit: "cover",
       height: "100vh",
       margin: "auto",
-      position: 'relative',
-      display: 'inline'
   };
   return (
       <ReactSVG src={Body}

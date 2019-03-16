@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Title from './Title';
-// import Phenotype from './Phenotype';
 import List from './List';
-// import FileDisplay from './FileDisplay';
 
-class Sidebar extends React.Component {
+
+class Sidebar extends Component {
 	constructor () {
 		super();
 	}
@@ -16,7 +15,6 @@ class Sidebar extends React.Component {
 			minWidth: "250px",
 			height: "100vh",
 			margin: "0",
-			// float: "left",
 			background: "#111",
 		}
 		return (

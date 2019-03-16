@@ -5,10 +5,9 @@ import HumanDisplay from './HumanDisplay';
 import Data from "../data/data.csv";
 
 
-class Docular extends Component {
+class App extends Component {
     constructor () {
         super();
-        // Initial state
         this.state = {
             data: undefined,
             phenotype: [],
@@ -36,13 +35,10 @@ class Docular extends Component {
 
     render () {
         let DocularStyle = {
-            // height: "100%",
-            // margin: "0 auto",
             display: "flex",
             flexDirection: "row",
             justifyContent: "flex-start",
             // flexFlow: "row wrap",
-            alignItems: "stretch",
             fontFamily: "Okomito Light"
 
         }
@@ -65,4 +61,4 @@ class Docular extends Component {
     };
 }
 
-export default Docular;
+export default App;
